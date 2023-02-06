@@ -1,0 +1,168 @@
+DIBUJO DE CARRO
+
+float ang;
+float x, y;
+float vel;
+
+
+void setup(){
+  size(564,385);
+  x=150;
+  y=290;
+  vel=5;
+  PImage img;
+  img = loadImage("highway.jpg");
+  image(img,0,0);
+  stroke(#959191); //bordes color negro
+  strokeWeight(2); //grosor del borde
+  fill(#959191);
+  rect(0, 350, width, 150);// dibujo de la calle
+  
+  
+}
+
+
+int value=0;
+
+
+
+void draw(){
+   beginShape();
+   fill(216, 15, 15); //color rojo para el carro
+   vertex(x, y);//1
+   vertex(x, y-35);//2
+   vertex(x+50, y-35);//3
+   vertex(x+75, y-80);//4
+   vertex(x+150, y-80);//5
+   vertex(x+225, y-35);//6
+   vertex(x+260, y-35);//7
+   vertex(x+260, y);//8
+   vertex(x, y);//9
+  endShape();
+ 
+
+  x+=vel;
+  ang+=(vel+2);
+  
+  //Ventanas
+  
+ //ventana trasera
+ beginShape();
+  fill(10, 225, 247); //color de las ventanas
+  vertex(x+59, y-35);//1
+  vertex(x+82, y-72);//2
+  vertex(x+105, y-35);//3
+  vertex(x-105, y-35);//4
+  vertex(x+59, y-35);//5
+ endShape();
+  
+//ventana delantera
+ beginShape();
+    fill(10, 225, 247);
+    vertex(x+130, y-72);//1
+    vertex(x+150, y-72);//2
+    vertex(x+210, y-35);//3
+    vertex(x+130, y-35);//4
+    vertex(x+130, y-72);//5
+  endShape();
+  
+//puerta
+  line(x+115, y-80, x+115, y);
+  
+  //llanta trasera
+  pushMatrix();
+    translate(x+60, y);
+      stroke(0);
+      strokeWeight(3);
+      fill(1, 14, 15);
+      circle(0, 0, 40);
+      fill(198, 198, 198);
+      circle(0, 0, 20);
+      stroke(183);
+      rotate(radians(ang));
+            line(0, 0, 20, 0);
+            fill(198, 198, 198);
+   popMatrix();
+   
+ //llanta delantera
+ pushMatrix();
+    translate(x+215, y);
+      stroke(0);
+      strokeWeight(3);
+      fill(1, 14, 15);
+      circle(0, 0, 40);
+      fill(198, 198, 198);
+      circle(0, 0, 20);
+      stroke(183);
+      rotate(radians(ang));
+          line(0, 0, 20, 0);
+          fill(198, 198, 198);
+   popMatrix();
+      
+}
+
+
+
+DIBUJO DE COMPUTADORA
+
+void setup(){
+  size(500, 500);
+}
+int value=0;
+
+void draw(){
+  background(213, 242, 127);
+  strokeWeight(1);
+  fill(182, 183, 179);
+  rect(120, 80, 220, 220, 28);
+  fill(51, 212, 242);
+  rect(135, 95,  190, 190, 18);
+  fill(182, 183, 179);
+  rect(200, 300, 65, 30);
+  rect(130, 325, 209, 120);
+  noFill();
+ 
+}
+
+
+DIBUJO DE PERSONA
+void setup(){
+  size(626, 417);
+  PImage img;
+  img = loadImage("jardin.jpg");
+  image(img, 0, 0);
+  
+}
+
+void draw(){
+  strokeWeight(1);
+  fill(41, 240, 215);
+  triangle(320, 290, 230, 150, 130, 290);
+  fill(247,225, 177);
+  circle(230, 115, 112);
+  rect(263, 200, 80, 15);
+  rect(115, 200, 80, 15);
+  rect(200, 290, 20, 70);
+  rect(250, 290, 20, 70);
+  fill(21, 15, 1);
+  circle(263, 350, 40);
+  circle(210, 350, 40);
+  fill(129, 92, 13);
+  circle(230, 50, 60);
+  fill(33, 179, 234);
+  arc(220, 70, 85, 40, PI+QUARTER_PI, TWO_PI);
+  fill(129, 92, 13);
+  arc(245, 115, 165, 115, PI, TWO_PI - HALF_PI);
+  arc(220, 115, 155, 115, TWO_PI - HALF_PI, TWO_PI);
+  fill(21, 15, 1);
+  strokeWeight(2);
+  arc(250, 130, 15, 5, PI+QUARTER_PI, TWO_PI);
+  arc(210, 130, 15, 5, PI+QUARTER_PI, TWO_PI);
+  fill(240, 36, 74);
+  arc(225, 155, 25, 8, 0, HALF_PI);
+  noFill();
+ 
+}
+  
+  
+  
